@@ -1,0 +1,13 @@
+[couchbase:vars]
+timeout=60
+ansible_become=yes
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file="/root/Downloads/ldap.pem"
+ansible_ssh_common_args="-o StrictHostKeyChecking=no"
+
+
+[couchbase:children]
+couchbase-server
+
+[couchbase-server]
+ec2-34-227-22-167.compute-1.amazonaws.com
